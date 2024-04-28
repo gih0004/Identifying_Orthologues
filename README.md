@@ -23,11 +23,12 @@ This document outlines the workflow used to identify orthologues between two dif
        - Check if both the query and the subject IDs from the BLAST results are located in the same orthogroup.
    - **Output:** A table containing the orthogroup number and the relevant BLAST results for matches where both sequences are in the same group froum Orthofinder.
 
-## Workflow BAsic Directory Structure
+## Directory Structure
 
-- `Home/` - Directory containing all input files including peptide sequences for both genomes. Files should be:
+- `Home/ortho-genomes` - Directory containing all input files including peptide sequences for both genomes. Files should be:
   1.  Genes_of_interest.fa = fasta file containing all sequences from genome A interested in finding in genome B
   2.  Peptides_genome_a.fa = peptide sequences of all genes (proteome) from Genome A
+- `Home/`
   3.  Peptides_genome_b.fa = peptide sequences of all genes (proteome) from Genome B
   4.  CDS_genome_b.fa= Gene coding seuqnece (CDS) from Genome B
   5.  Gene_annotation.txt=  Text file that has GOI_ID and a functional annotation on the same row ; Column name for this identifier should replace <'TF_ID'> in line 59 of this code  
