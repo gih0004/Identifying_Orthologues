@@ -57,7 +57,7 @@ print(merged_df)
 print(exact_match_df)
 
 # Save the exact matches to a CSV file
-exact_match_df.to_csv('Genome_A_GOIs_in_Genome_B_with_OGs', index=False)
+exact_match_df.to_csv('Genome_A_GOIs_in_Genome_B_with_OGs.csv', index=False)
 
 # Read additional gene annotations and merge
 GOI_annotations_path = "./Gene_annotations.txt"
