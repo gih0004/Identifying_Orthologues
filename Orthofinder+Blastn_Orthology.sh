@@ -1,29 +1,24 @@
 #!/bin/bash
 
 #SBATCH -J pipeline # change this with the name of your job
-#SBATCH --account=leisnerlpb
-#SBATCH --partition=normal_q
 #SBATCH --nodes=1
 #SBATCH --mem=64G
-#SBATCH --time=48:00:00 # change this with desired wall time limit
-#SBATCH --mail-type=ALL
-#SBATCH --mail-user=gih0004@vt.edu
 
 # Load OrthoFinder module
-#module load OrthoFinder/2.5.4-foss-2020b
+module load OrthoFinder/2.5.4-foss-2020b
 
 # Run OrthoFinder
-#orthofinder -f ./ortho-genomes/
+orthofinder -f ./ortho-genomes/
 
 # Load BLAST+ module
-#module load BLAST+/2.13.0-gompi-2022a
+module load BLAST+/2.13.0-gompi-2022a
 
 # Create BLAST database
-#makeblastdb -in CDS_genome_b_[ATL].fa -dbtype nucl -out CDS_genome_b[ATL].fa_db
+makeblastdb -in CDS_genome_b_[ATL].fa -dbtype nucl -out CDS_genome_b[ATL].fa_db
 
 
 # Run BLASTN
-#blastn -query Genes_of_interest.fa -db CDS_genome_b[ATL].fa_db -perc_identity 95  -evalue 1e-5 -out Ortho+BLASTn_results.txt -outfmt "6 sacc qsedid qacc evalue sallseqid pident ppos"
+blastn -query Genes_of_interest.fa -db CDS_genome_b[ATL].fa_db -perc_identity 95  -evalue 1e-5 -out Ortho+BLASTn_results.txt -outfmt "6 sacc qsedid qacc evalue sallseqid pident ppos"
 
 
 cp ./ortho-genomes/OrthoFinder/*/Orthogroups/Orthogroups.tsv . 
