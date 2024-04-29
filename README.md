@@ -12,7 +12,7 @@ This document outlines the workflow used to identify orthologues between two dif
 
 2. **BLASTn Searching:**
    - **Purpose:** Search for specific gene coding squenes (CDS) as query from Genome A within Genome B.
-   - **Input:** Set of query gene CDS sequences from Genome A.
+   - **Input:** Set of query gene CDS sequences from Genome A and CDS of Genome B.
    - **Process:** Perform BLAST searches of these query sequences against the CDS sequences of Genome B.
    - **Output:** BLAST result files containing matches and their details (e.g., alignment scores, E-values).
 
