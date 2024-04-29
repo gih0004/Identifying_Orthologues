@@ -30,10 +30,10 @@ This document outlines the workflow used to identify orthologues between two dif
 ## Directory Structure
 
 - `Home/ortho-genomes` - Directory containing inout files for orthofinder for both genomes. Files should be:
-1.   Genes_of_interest.fa = fasta file containing all sequences from genome A interested in finding in genome B
-2.   Peptides_genome_a.fa = peptide sequences of all genes (proteome) from Genome A
+1.    Peptides_genome_a.fa = peptide sequences of all genes (proteome) from Genome A
+2.    Peptides_genome_b.fa = peptide sequences of all genes (proteome) from Genome B
 - `Home/` - Directory containing remaining input files for pipeline: 
-3.  Peptides_genome_b.fa = peptide sequences of all genes (proteome) from Genome B
+3.  Genes_of_interest.fa = fasta file containing all CDS sequences from genome A interested in finding in genome B
 4.  CDS_genome_b.fa= Gene coding seuqnece (CDS) from Genome B
 5.  Gene_annotation.txt=  Text file that has one column with GOI_ID and a functional annotation on a different column ; Column name for this identifier should replace <'TF_ID'> in line 59 of this code  
 
