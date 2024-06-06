@@ -14,11 +14,11 @@ orthofinder -f ./ortho-genomes/
 module load BLAST+/2.13.0-gompi-2022a
 
 # Create BLAST database
-makeblastdb -in CDS_genome_b_[ATL].fa -dbtype nucl -out CDS_genome_b[ATL].fa_db
+makeblastdb -in CDS_genome_b.fa -dbtype nucl -out CDS_genome_b.fa_db
 
 
 # Run BLASTN
-blastn -query Genes_of_interest.fa -db CDS_genome_b[ATL].fa_db -perc_identity 95  -evalue 1e-5 -out Ortho+BLASTn_results.txt -outfmt "6 sacc qsedid qacc evalue sallseqid pident ppos"
+blastn -query Genes_of_interest.fa -db CDS_genome_b.fa_db -perc_identity 95  -evalue 1e-5 -out Ortho+BLASTn_results.txt -outfmt "6 sacc qsedid qacc evalue sallseqid pident ppos"
 
 
 cp ./ortho-genomes/OrthoFinder/*/Orthogroups/Orthogroups.tsv . 
@@ -42,10 +42,10 @@ GOI_df = pd.read_csv(GOI_path, sep='\t')
 GOI_df.columns = ['Subject_accession', 'Query_sequence', 'E_value', 'Subject_all_sequence_identifier', 'Percentage_identity', 'Percentage_positives']
 
 # Merge the data frames based on common columns
-merged_df = pd.merge(GOI_df, orthogroups_df, how='left', left_on=['Subject_accession', 'Query_sequence'], right_on=['Peptides_genome_b_[ATL]', 'Peptide_genome_a_[PSGC]'])
+merged_df = pd.merge(GOI_df, orthogroups_df, how='left', left_on=['Subject_accession', 'Query_sequence'], right_on=['Peptides_genome_b', 'Peptide_genome_a'])
 
 # Second merge that excludes rows with no match in the orthogroups
-exact_match_df = pd.merge(GOI_df, orthogroups_df, how='inner', left_on=['Subject_accession', 'Query_sequence'], right_on=['Peptides_genome_b_[ATL]', 'Peptide_genome_a_[PSGC]'])
+exact_match_df = pd.merge(GOI_df, orthogroups_df, how='inner', left_on=['Subject_accession', 'Query_sequence'], right_on=['Peptides_genome_b', 'Peptide_genome_a'])
 
 # Print the merged data frames
 print(merged_df)
