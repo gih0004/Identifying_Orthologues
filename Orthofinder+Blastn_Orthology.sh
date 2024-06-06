@@ -42,10 +42,10 @@ GOI_df = pd.read_csv(GOI_path, sep='\t')
 GOI_df.columns = ['Subject_accession', 'Query_sequence', 'E_value', 'Subject_all_sequence_identifier', 'Percentage_identity', 'Percentage_positives']
 
 # Merge the data frames based on common columns
-merged_df = pd.merge(GOI_df, orthogroups_df, how='left', left_on=['Subject_accession', 'Query_sequence'], right_on=['Peptides_genome_b', 'Peptide_genome_a'])
+merged_df = pd.merge(GOI_df, orthogroups_df, how='left', left_on=['Subject_accession', 'Query_sequence'], right_on=['Peptides_genome_b', 'Peptides_genome_a'])
 
 # Second merge that excludes rows with no match in the orthogroups
-exact_match_df = pd.merge(GOI_df, orthogroups_df, how='inner', left_on=['Subject_accession', 'Query_sequence'], right_on=['Peptides_genome_b', 'Peptide_genome_a'])
+exact_match_df = pd.merge(GOI_df, orthogroups_df, how='inner', left_on=['Subject_accession', 'Query_sequence'], right_on=['Peptides_genome_b', 'Peptides_genome_a'])
 
 # Print the merged data frames
 print(merged_df)
