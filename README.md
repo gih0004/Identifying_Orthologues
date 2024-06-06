@@ -35,7 +35,7 @@ This document outlines the workflow used to identify orthologues between two dif
 - `Home/` - Directory containing remaining input files for pipeline: 
 3.  Genes_of_interest.fa = fasta file containing all CDS sequences from genome A interested in finding in genome B
 4.  CDS_genome_b.fa= Gene coding seuqnece (CDS) from Genome B
-5.  Gene_annotation.txt=  Text file that has one column with GOI_ID and a functional annotation on a different column ; Column name used for this GOI_ID identifier should replace <'TF_ID'> in line 59 of this code  
+5.  Gene_annotations.txt=  Text file that has one column with GOI_ID and a functional annotation on a different column ; Column name used for this GOI_ID identifier should replace <'TF_ID'> in line 59 of this code  
 
 
 
