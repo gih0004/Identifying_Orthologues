@@ -87,11 +87,8 @@ Code used for GOI (Different to that of TF).
 #!/bin/bash
 
 #SBATCH -J pipeline_GOI # change this with the name of your job
-#SBATCH --account=leisnerlab
-#SBATCH --partition=normal_q
 #SBATCH --nodes=1
 #SBATCH --mem=64G
-#SBATCH --mail-user=gih0004@vt.edu
 
 # Load OrthoFinder module
 module load OrthoFinder/2.5.4-foss-2020b
@@ -195,11 +192,8 @@ Code for TF:
 #!/bin/bash
 
 #SBATCH -J pipeline_TF # change this with the name of your job
-#SBATCH --account=leisnerlab
-#SBATCH --partition=normal_q
 #SBATCH --nodes=1
 #SBATCH --mem=64G
-#SBATCH --mail-user=gih0004@vt.edu
 #!/bin/bash
 
 
